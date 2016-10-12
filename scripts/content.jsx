@@ -2,15 +2,17 @@
 var about = {
   title: "About Me",
   description: "My name is Ray Han. I am a recent graduated computer science major. In the past few years, I have completed several curricular, extracurricular and off-campus programming projects. Through these projects, I have gained a lot of valuable experices in different areas of software engineering including design, implementation and testing. I am also able to develop my area of interest by taking on different roles in different kind of projects.",
-  color: '#C63D0F'
+  backgroundImage: "url(../images/about_me_bg.jpg)" 
 };
 
 //Data model for the education section of the website
 var education = {
   title: "Education",
-  description: "I have with the honor from California State University, Los Angeles with a Bachelor of Science in computer science. During my undergraduate years, I have excelled in all courses, received several honors and rewards and participated in many projects and events.",
-  color: "#3B3738"
+  description: "I have with the honor from California State University, Los Angeles with a Bachelor of Science in computer science. During my undergraduate years, I have excelled in all courses, received several honors and rewards and participated in many projects and events."
 };
+
+//Color Scheme used on the website
+var colors = ['#4285f4', "#0f9d58", "#f4b400", "#db4437"]
 
 //Data model for the content of the website
 var content = [about, education];
@@ -20,16 +22,20 @@ var ContentComponent = React.createClass({
   render: function () {
     return (
       <div>
-        {this.props.data.map(function (section) {
-          //Create the div style from the section color
+        {this.props.data.map(function (section, idx) {
+          //Create the div style
           var divStyle = {
-            background: section.color,
+            backgroundImage: section.backgroundImage,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundColor: "rgba(255, 255, 255, .2)",
             margin: 0
           };
-          //Create the text style from the section color
+          //Create the text style
           var textStyle = {
-            color: section.color,
-            filter: "invert(100%)"
+            color: 'white',
+            margin: 10
+            //textShadow: '-1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff'
           };
           return (
             <div style={divStyle} className="well">
@@ -37,11 +43,11 @@ var ContentComponent = React.createClass({
               <p className="lead" style={textStyle}>{section.description}</p>
             </div>
           )
-        })}
+        }, this)}
       </div>
     )
   }
 });
 
 //Render content compont to the DOM
-ReactDOM.render(<ContentComponent data={content } />, document.getElementById("mainPage"));
+ReactDOM.render(<ContentComponent data={ content } colors={ colors } />, document.getElementById("mainPage"));
