@@ -1,0 +1,30 @@
+a {
+  color: black;
+}
+
+.lead {
+  color: black;
+}
+
+.img-circle {
+  display: block;
+  margin: auto;
+}
+
+
+
+#color-1 {
+  background: #4285f4;
+}
+
+#color-2 {
+  background: #0f9d58;
+}
+
+#color-3 {
+  background: #f4b400;
+}
+
+#color-4 {
+  background: #db4437;
+}
