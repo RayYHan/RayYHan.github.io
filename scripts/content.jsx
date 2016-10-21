@@ -4,23 +4,49 @@ var about = {
   title: "About Me",
   description: 
   <div>
-    <h3>Ray Y Han</h3>
-    <h4>Software Engineer</h4>
+    <h2>Ray Y Han</h2>
+    <h3>Software Engineer</h3>
     <p>
     I am a recently graduated computer science major with excellent academic record and
     some professional experice. I have done several projects for the reasons of academic,
     professional and personal interest. I believe these personal properties of mine will
     make me a great candidate for a software engineering position:
+    </p>
     <ul>
       <li>
       <b>Logical</b>
-      <p>I have a very logical mindset that enables me </p>
+      <p>
+      I have a very logical mindset that enables me be good at modeling a problem into
+      code and produce necessary steps to reach a solution.
+      </p>
       </li>
-      <li>Enthusiastic</li>
-      <li>Deadline Driven</li>
-      <li>Flexible</li>
+      <li>
+      <b>Enthusiastic</b>
+      <p>
+      When I run into a difficult challenge, I try really hard to come up with a solution
+      not because I have to, but because I really want to. Sometime a mental road block
+      would keep me sleepless and other times an eruka moment would wake me from the
+      deepest slumber.
+      </p>
+      </li>
+      <li>
+      <b>Deadline Driven</b>
+      <p>
+      Deadline is my religious. If a due date is set, I would exert all my might to meet it.
+      During my years in school, I turned in all the assignments on time and met all the
+      project deadlines.
+      </p>
+      </li>
+      <li>
+      <b>Flexible</b>
+      <p>
+      I have taken on many different roles in different groups for different projects. I was
+      known for my ability to code when a coder was needed; I came up with many well received
+      design ideas when the team already had strong coders; and I assumed a leadship role and
+      took charge when a team was headless.
+      </p>
+      </li>
     </ul>
-    </p>
   </div>,
   //"My name is Ray Han. I am a recent graduated computer science major. In the past few years, I have completed several curricular, extracurricular and off-campus programming projects. Through these projects, I have gained a lot of valuable experices in different areas of software engineering including design, implementation and testing. I am also able to develop my area of interest by taking on different roles in different kind of projects.",
   image: "../images/about_me.png"
@@ -53,9 +79,9 @@ var NavComponent = React.createClass({
       <ul className="nav nav-tabs navbar-fixed-top">
         {this.props.data.map(function (section, idx) {
           var className = "color-" + (idx % 4 + 1);
-          section.id == this.props.first && (className += " disabled");
+          section.id == this.props.first && (className += " disabled first");
           return (
-            <li><a className={className} href={"#" + section.id}>{ section.title }</a></li>
+            <li key={section.id}><a className={className} href={"#" + section.id}>{ section.title }</a></li>
           )
           }, this)}
       </ul>
@@ -101,7 +127,7 @@ var SectionComponent = React.createClass({
       <div className={className} id={ this.props.section.id }>
         {!this.state.first && <h2>{ this.props.section.title }</h2>}
         <img src={ this.props.section.image } className="img-circle img-fluid" />
-        <p className="lead">{ this.props.section.description }</p>
+        <div className="lead">{ this.props.section.description }</div>
       </div>
     );
   }
@@ -123,7 +149,7 @@ var ContentComponent = React.createClass({
         <NavComponent data={ this.props.data } first={this.state.first} />
         {this.props.data.map(function (section, idx, arr) {
           return (
-            <SectionComponent section={section} idx={idx} len={arr.length} firstHandler={this.firstHandler} first={this.state.first} />
+            <SectionComponent section={section} key={section.id} idx={idx} len={arr.length} firstHandler={this.firstHandler} first={this.state.first} />
           )
         }, this)}
       </div>
