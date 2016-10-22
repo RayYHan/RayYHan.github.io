@@ -70,10 +70,47 @@ var education = {
   image: "../images/codeathon.png"
 };
 
+var heartAttack = {
+  id: "heartAttack",
+  title: "Heart Attack",
+  images: {
+    type: "animation",
+    stop: "../images/heart_attack.png",
+    play: "../images/heart_attack.gif"
+  },
+  description:
+  <div>
+    <h2>PyGame Prototype</h2>
+    <h3>Codeathon, 2015</h3>
+    <p>
+      In fall 2105, I participated the Cal State LA, "Fight the Ladykiller",
+      codeathon. The theme was to design and rapid prototype if possible an App
+      that raises awareness of women's heart disease of women of the age group 18
+      - 25. To cater the interest of this age group, the design of my group was a
+      simple advanture game with embeded heart health messages. The prototype was
+      retooled from a project I did the previous quarter. It was writtin in Python
+      with the PyGame library.
+    </p>
+  </div>
+};
+
 var projects = {
   id: "project",
   title: "Projects",
-  description: "I have worked on several projects for both academic and professional purposes"
+  image: "../images/projects.png",
+  description: 
+  <div>
+    <h2>Academic and Professional Projects</h2>
+    <h3>Cal State LA, NASA JPL, 2015 - 2016</h3>
+    <p>
+    During my time at school and internship, I have completed several projects. Some project
+    helped me learn different tools and technology while others taught me how to apply
+    classroom theories in practice. Below is a short list of the more notable projects I
+    worked on.
+    </p>
+  </div>,
+  subsections: [heartAttack]
+  //"I have worked on several projects for both academic and professional purposes"
 }
 
 //Color Scheme used on the website
@@ -99,6 +136,56 @@ var NavComponent = React.createClass({
     );
   }
 })
+
+//React component to render image(s) of sub-sections
+var ImageComponent = React.createClass ({
+  getInitialState: function () {
+    return { play: false };
+  },
+
+  hoverHandler: function () {
+    this.setState({ play: true });
+  },
+
+  unhoverHandler: function () {
+    this.setState({ play:false });
+  },
+
+  render: function () {
+    var imgObj = this.props.imgObj;
+    var stopImg = imgObj.stop;
+    var playImg = imgObj.play;
+    if (imgObj.type == "animation") {
+      return (
+        <img 
+        src={ this.state.play ? playImg : stopImg }
+        className={"img-responsive center-block"}
+        onMouseOver={ this.hoverHandler }
+        onMouseLeave={ this.unhoverHandler }
+        />);
+    }
+  }
+});
+
+//React component to render each sub-section of a section
+var SubSectionComponent = React.createClass({
+  getInitialState: function () {
+    return {first: false};
+  },
+
+  render: function () {
+    var colorId = (this.props.sidx + this.props.idx + 1) % 4 + 1;
+    var className = "sub-section container-fluid color-" + colorId;
+    return (
+      <div className={ className }>
+        {!this.state.first && <h2>{ this.props.section.title }</h2>}
+        <ImageComponent imgObj={this.props.section.images} />
+        <div className="lead">{ this.props.section.description }</div>
+      </div>
+    );
+  }
+
+});
 
 //React component to render each section of the content
 var SectionComponent = React.createClass({
@@ -127,7 +214,7 @@ var SectionComponent = React.createClass({
   },
 
   render: function () {
-    var className = "container-fluid" + " color-" + (this.props.idx % 4 + 1);
+    var className = "container-fluid color-" + (this.props.idx % 4 + 1);
     if (this.props.idx == this.props.len - 1) {
       className += " last";
     }
@@ -137,8 +224,11 @@ var SectionComponent = React.createClass({
     return (
       <div className={className} id={ this.props.section.id }>
         {!this.state.first && <h2>{ this.props.section.title }</h2>}
-        <img src={ this.props.section.image } className="img-circle img-fluid" />
+        <img src={ this.props.section.image } className={"img-circle img-responsive center-block"} />
         <div className="lead">{ this.props.section.description }</div>
+        {this.props.section.subsections && this.props.section.subsections.map(function (subsection, idx) {
+          return <SubSectionComponent idx={idx} sidx={this.props.idx} section={subsection} key={subsection.id}/>
+        }, this)}
       </div>
     );
   }
