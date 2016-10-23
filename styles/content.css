@@ -3,6 +3,12 @@
   background: white;
 }
 
+.sub-menu {
+  margin-top: 41px;
+  margin-left: 15px;
+  background: none;
+}
+
 a {
   color: black;
 }
