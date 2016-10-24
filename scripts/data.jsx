@@ -72,6 +72,37 @@ var education = {
   image: "../images/codeathon.png"
 };
 
+var rasta = {
+  id: "rasta",
+  title: "RASTA",
+  images: {
+    type: "carousel",
+    images: [
+      "../images/rasta/rasta1.png",
+      "../images/rasta/rasta2.png",
+      "../images/rasta/rasta3.png",
+    ]
+  },
+  description:
+    <div>
+      <h2>REST API Service Task Assessor</h2>
+      <h3>NASA - JPL, 2016</h3>
+      <p>
+        For my internship at JPL in summer 2016, my team was tasked with
+        creating a web app to monitor and test large number of REST API
+        Services. The services need to be tested are API calls currently
+        used by NASA portals. Our app can parse the API calls out of the
+        Apache logs of these portals, perform scheduled and manual tests
+        of these API calls and notify system administrator in case of
+        serive unavailablities. Our app is build on the MEAN stack with 
+        NodeJS and ExpressJS handling the server, AngularJS handling the
+        frontend and MongoDB managing the data. My tasks for the project
+        was to program server-side logic in Node and CRUD operations in
+        Mongo.
+      </p>
+    </div>
+}
+
 var heartAttack = {
   id: "heartAttack",
   title: "Heart Attack",
@@ -97,7 +128,7 @@ var heartAttack = {
 };
 
 var projects = {
-  id: "project",
+  id: "projects",
   title: "Projects",
   image: "../images/projects.png",
   description: 
@@ -111,7 +142,7 @@ var projects = {
     worked on.
     </p>
   </div>,
-  subsections: [heartAttack]
+  subsections: [rasta, heartAttack]
   //"I have worked on several projects for both academic and professional purposes"
 }
 

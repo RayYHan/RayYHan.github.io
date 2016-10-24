@@ -5,11 +5,11 @@ var Navbar = React.createClass({
   render: function () {
     var className = "nav nav-tabs navbar-fixed-top";
     this.props.subMenu && (className += " sub-menu");
-    this.props.colorOffset && (className += (" color-" + ((this.props.colorOffset - 1) % 4 + 1)));
+    //this.props.colorOffset && (className += (" color-" + ((this.props.colorOffset - 1) % 4 + 1)));
     return (
       <ul className={ className }>
         {this.props.data.map(function (section, idx) {
-          var colorId = (this.props.colorOffset ? this.props.colorOffset : 0 + idx) % 4 + 1
+          var colorId = ((this.props.colorOffset ? this.props.colorOffset : 0) + idx) % 4 + 1
           var className = "color-" + colorId;
           section.id == this.props.first && (className += " disabled first");
           return (

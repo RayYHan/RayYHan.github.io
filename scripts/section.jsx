@@ -5,10 +5,14 @@ import SubSection from "./subsection.jsx";
 //React component to render each section of the content
 var Section = React.createClass({
   getInitialState: function () {
+    var initState = { first: false, first_sub: null, last: false };
     if (this.props.idx == 0) {
-      return {first: true};
+      initState.first = true;
     }
-    return {first: false};
+    if (this.props.idx == this.props.len - 1) {
+      initState.last = true;
+    }
+    return initState;
   },
 
   handleScroll: function () {
@@ -24,13 +28,17 @@ var Section = React.createClass({
     }
   },
 
+  handleFirst: function (first) {
+    this.setState({ first_sub: first });
+  },
+
   componentDidMount: function() {
     window.addEventListener("scroll", this.handleScroll);
   },
 
   render: function () {
     var className = "container-fluid color-" + (this.props.idx % 4 + 1);
-    if (this.props.idx == this.props.len - 1) {
+    if (this.state.last) {
       className += " last";
     }
     if (this.state.first) {
@@ -42,12 +50,22 @@ var Section = React.createClass({
           <Navbar
           data={this.props.section.subsections}
           subMenu={ true }
-          colorOffset={ this.props.idx + 1 } />}
+          colorOffset={ this.props.idx + 1 }
+          first={ this.state.first_sub } />}
         {!this.state.first && <h2>{ this.props.section.title }</h2>}
         <img src={ this.props.section.image } className={"img-circle img-responsive center-block"} />
         <div className="lead">{ this.props.section.description }</div>
-        {this.props.section.subsections && this.props.section.subsections.map(function (subsection, idx) {
-          return <SubSection idx={idx} sidx={this.props.idx} section={subsection} key={subsection.id}/>
+        {this.props.section.subsections && this.props.section.subsections.map(function (subsection, idx, subSections) {
+          return (<SubSection
+            idx={idx}
+            sidx={this.props.idx}
+            section={subsection}
+            key={subsection.id}
+            firstHandler={this.handleFirst}
+            last={this.state.last}
+            len={subSections.length}
+            first={this.state.first_sub}
+          />)
         }, this)}
       </div>
     );
