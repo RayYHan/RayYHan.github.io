@@ -1,5 +1,6 @@
 import React from "react";
-import Images from "./images.jsx"
+import Images from "./images.jsx";
+import config from "./config.js";
 
 //React component to render each sub-section of a section
 var SubSection = React.createClass({
@@ -30,7 +31,7 @@ var SubSection = React.createClass({
   },
 
   render: function () {
-    var colorId = (this.props.sidx + this.props.idx + 1) % 4 + 1;
+    var colorId = (this.props.sidx + this.props.idx + 1) % config.color_num + 1;
     var className = "sub-section container-fluid color-" + colorId;
     this.state.first && (className += " first-sub");
     this.state.last && (className += " last");

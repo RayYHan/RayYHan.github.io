@@ -57,6 +57,14 @@ var Images = React.createClass ({
         </div>
       );
     }
+    if (imgObj.type == "embeded") {
+      return (
+        <div className="embeded-responsive">
+          <iframe
+            className="embed-responsive-item"
+            src={imgObj.src}></iframe>
+        </div>);
+    }
   }
 });
 

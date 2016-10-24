@@ -19,6 +19,7 @@ a {
   color: black;
 }
 
+/* Color scheme one, four colors*/
 .color-1 {
   color: black;
   background: #9ec3ff;
@@ -38,6 +39,22 @@ a {
   color: black;
   background: #efb5b0;
 }
+
+/* Color scheme two, three colors
+.color-1 {
+  color: darkslategray;
+  background: #4ABDAC;
+}
+
+.color-2 {
+  color: darkslategray;
+  background: #FC4A1A;
+}
+
+.color-3 {
+  color: darkslategray;
+  background: #F7B733;
+}*/
 
 .first {
   padding-top: 70px; 
@@ -61,6 +78,7 @@ a {
 
 .carousel {
   width: 800px;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -68,4 +86,16 @@ a {
 .carousel-inner > .item > a > img {
   width: 100%;
   margin: auto;
+}
+
+.embeded-responsive {
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+}
+
+iframe {
+  width: 800px;
+  height: 600px;
+  max-width: 100%;
 }

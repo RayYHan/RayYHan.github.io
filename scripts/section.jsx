@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./navbar.jsx";
 import SubSection from "./subsection.jsx";
+import config from "./config.js";
 
 //React component to render each section of the content
 var Section = React.createClass({
@@ -37,7 +38,7 @@ var Section = React.createClass({
   },
 
   render: function () {
-    var className = "container-fluid color-" + (this.props.idx % 4 + 1);
+    var className = "container-fluid color-" + (this.props.idx % config.color_num + 1);
     if (this.state.last) {
       className += " last";
     }

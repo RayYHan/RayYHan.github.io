@@ -1,4 +1,5 @@
 import React from "react";
+import config from "./config.js"
 
 //React component to render the navbar
 var Navbar = React.createClass({
@@ -9,7 +10,7 @@ var Navbar = React.createClass({
     return (
       <ul className={ className }>
         {this.props.data.map(function (section, idx) {
-          var colorId = ((this.props.colorOffset ? this.props.colorOffset : 0) + idx) % 4 + 1
+          var colorId = ((this.props.colorOffset ? this.props.colorOffset : 0) + idx) % config.color_num + 1
           var className = "color-" + colorId;
           section.id == this.props.first && (className += " disabled first");
           return (

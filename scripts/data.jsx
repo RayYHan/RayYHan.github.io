@@ -81,6 +81,7 @@ var rasta = {
       "../images/rasta/rasta1.png",
       "../images/rasta/rasta2.png",
       "../images/rasta/rasta3.png",
+      "../images/rasta/rasta4.png"
     ]
   },
   description:
@@ -101,7 +102,7 @@ var rasta = {
         Mongo.
       </p>
     </div>
-}
+};
 
 var heartAttack = {
   id: "heartAttack",
@@ -127,6 +128,28 @@ var heartAttack = {
   </div>
 };
 
+var rayYHan = {
+ id: "rayYHan",
+ title: "This site",
+ images: {
+   type: "embeded",
+   src: "../index.html"
+ },
+ description:
+ <div>
+  <h2>RayYHan.github.io</h2>
+  <h3>Personal Portfolio, 2016</h3>
+  <p>
+  I am building this single page website for two purposes. One is to create a web based resmue and
+  Portfolio to help me find a job. The other is that I want to use it as a test bed to learn React
+  JS. I have heard a lot of praises about this framework but found it hard to learn something
+  without actually applying it. I am only able to scratch the surface of the framework with this
+  site and I like it a lot and hope to learn it in depth with a bigger, badder project in the
+  future.
+  </p>
+ </div>
+};
+
 var projects = {
   id: "projects",
   title: "Projects",
@@ -142,9 +165,9 @@ var projects = {
     worked on.
     </p>
   </div>,
-  subsections: [rasta, heartAttack]
+  subsections: [rasta, heartAttack, rayYHan]
   //"I have worked on several projects for both academic and professional purposes"
-}
+};
 
 //Data model for the content of the website
 var content = [about, education, projects];
