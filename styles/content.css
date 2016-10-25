@@ -99,3 +99,15 @@ iframe {
   height: 600px;
   max-width: 100%;
 }
+
+.find-me {
+  display: block;
+  margin: auto;
+  width: fit-content;
+}
+
+.icon {
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+}

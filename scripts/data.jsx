@@ -169,7 +169,73 @@ var projects = {
   //"I have worked on several projects for both academic and professional purposes"
 };
 
+var skills = {
+  id: "skills",
+  title: "Skills",
+  image: "../images/skills.png",
+  description:
+  <div>
+    <h2>Technical Skills</h2>
+    <ul className="skills">
+      <li>
+        <b>NodeJS</b>
+        <ul>
+          <li>RASTA web app, NASA-JPL, 2016</li>
+          <li>Angular/Node class, Cal State LA, 2015</li>
+        </ul>
+      </li>
+      <li>
+        <b>Python</b>
+        <ul>
+          <li>Data Science class, Cal State LA, 2016</li>
+          <li>MMO Game class, Cal State LA, 2015</li>
+          <li>Python/PyGame class, Cal State LA, 2015</li>
+        </ul>
+      </li>
+      <li>
+        <b>ReactJS</b>
+        <ul>
+          <li>Bulding this portfolio, 2016</li>
+          <li>Codecademy tutorial, 2016</li>
+        </ul>
+      </li>
+      <li>
+        <b>C++</b>
+        <ul>
+          <li>NASA Swarmathon competition class, Cal State LA, 2015</li>
+          <li>C++ class, Cal State LA, 2015</li>
+          <li>One year worth of intro level programming class, Pasadena City College, 2014</li>
+        </ul>
+      </li>
+      <li>
+        <b>JAVA</b>
+        <ul>
+          <li>Data Science class, Cal State LA, 2016</li>
+          <li>JSP web dev class, Cal State LA, 2015</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+};
+
+var findMe = {
+  id: "findMe",
+  title: "Find Me",
+  description:
+  <div className="find-me">
+    <a href="https://www.linkedin.com/in/ray-han-a709ba61">
+      <img className="icon" src="../images/find_me/linkedin.png" />
+    </a>
+    <a href="https://github.com/RayYHan">
+      <img className="icon" src="../images/find_me/github.png" />
+    </a>
+    <a href="mailto://giraiday@gmail.com">
+      <img className="icon" src="../images/find_me/email.png" />
+    </a>
+  </div>
+}
+
 //Data model for the content of the website
-var content = [about, education, projects];
+var content = [about, education, projects, skills, findMe];
 
 export default content;

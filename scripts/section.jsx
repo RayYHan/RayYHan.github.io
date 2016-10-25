@@ -20,11 +20,11 @@ var Section = React.createClass({
     var id = this.props.section.id;
     var el = document.getElementById(id);
     var rc = el.getBoundingClientRect();
-    if (rc.top <= 42 && rc.bottom > 42 && !this.state.first) {
+    if (rc.top <= 50 && rc.bottom > 50 && !this.state.first) {
       this.setState({first: true});
       this.props.firstHandler(id);
     }
-    if (rc.top > 42 || rc.bottom < 42 && this.state.first) {
+    if (rc.top > 50 || rc.bottom < 100 && this.state.first) {
       this.setState({first: false});
     }
   },
