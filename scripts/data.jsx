@@ -229,7 +229,7 @@ var findMe = {
     <a href="https://github.com/RayYHan">
       <img className="icon" src="../images/find_me/github.png" />
     </a>
-    <a href="mailto://giraiday@gmail.com">
+    <a href="mailto:giraiday@gmail.com">
       <img className="icon" src="../images/find_me/email.png" />
     </a>
   </div>
