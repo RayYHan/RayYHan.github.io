@@ -62,7 +62,7 @@ var experience = {
   description:
   <div>
   <h2>Software Engineering Intern</h2>
-  <h3>National Aeronautic and Space Agency - Jet Propulsion Laboratory Jun, 2016 - Aug, 2016</h3>
+  <h3>National Aeronautics and Space Administration - Jet Propulsion Laboratory Jun, 2016 - Aug, 2016</h3>
   <p>
   Through the NASA DIRECT STEM program, I received a summer internship
   oppotunity at NASA - JPL. During the internship, I worked in a team
