@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar.jsx";
 import SubSection from "./subsection.jsx";
 import config from "./config.js";
+import Footer from "./footer.jsx";
 
 //React component to render each section of the content
 var Section = React.createClass({
@@ -68,6 +69,7 @@ var Section = React.createClass({
             first={this.state.first_sub}
           />)
         }, this)}
+        { this.state.last && <Footer /> }
       </div>
     );
   }

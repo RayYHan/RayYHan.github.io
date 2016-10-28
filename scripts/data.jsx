@@ -54,6 +54,25 @@ var about = {
   image: "../images/about_me.png"
 };
 
+//Data model for the experience section of the website
+var experience = {
+  id: "experience",
+  title: "Experience",
+  image: "../images/jpl.png",
+  description:
+  <div>
+  <h2>Software Engineering Intern</h2>
+  <h3>National Aeronautic and Space Agency - Jet Propulsion Laboratory Jun, 2016 - Aug, 2016</h3>
+  <p>
+  Through the NASA DIRECT STEM program, I received a summer internship
+  oppotunity at NASA - JPL. During the internship, I worked in a team
+  of three on the <a href="#rasta">REST API Service Task Assessor</a>. My tasks within the
+  team includes programming server-side logic in nodeJS and database
+  CRUD operations in MongoDB. 
+  </p>
+  </div>
+}
+
 //Data model for the education section of the website
 var education = {
   id: "education",
@@ -215,6 +234,12 @@ var skills = {
         </ul>
       </li>
     </ul>
+    <p>
+    I would consider the most valuable skill I gained in the past few years to be the
+    ability to acquire new skills. Any piece of technology I now know may go out of
+    favor any day. But the the ability to pick up whatever is relevent will never go
+    out of fashion.
+    </p>
   </div>
 };
 
@@ -229,13 +254,13 @@ var findMe = {
     <a href="https://github.com/RayYHan">
       <img className="icon" src="../images/find_me/github.png" />
     </a>
-    <a href="mailto:giraiday@gmail.com">
-      <img className="icon" src="../images/find_me/email.png" />
+    <a>
+      <img className="icon" id="email-icon" src="../images/find_me/email.png" />
     </a>
   </div>
 }
 
 //Data model for the content of the website
-var content = [about, education, projects, skills, findMe];
+var content = [about, experience, education, projects, skills, findMe];
 
 export default content;

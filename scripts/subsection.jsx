@@ -37,7 +37,7 @@ var SubSection = React.createClass({
     this.state.last && (className += " last");
     return (
       <div className={ className } id={ this.props.section.id }>
-        {!this.state.first && <h2>{ this.props.section.title }</h2>}
+        {!this.state.first && <h2 className="sub-sect-title">{ this.props.section.title }</h2>}
         <Images imgObj={this.props.section.images} />
         <div className="lead">{ this.props.section.description }</div>
       </div>

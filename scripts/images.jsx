@@ -62,6 +62,7 @@ var Images = React.createClass ({
       return (
         <div className="embeded-responsive">
           <iframe
+            scrolling="no"
             className="embed-responsive-item"
             src={imgObj.src}></iframe>
         </div>);

@@ -1,6 +1,8 @@
 ﻿import React from "react";
 import Navbar from "./navbar.jsx";
 import Section from "./section.jsx";
+import LightBox from "./lightbox.jsx";
+import Footer from "./footer.jsx"
 
 //React component to render the content of the website
 var Content = React.createClass({
@@ -21,6 +23,7 @@ var Content = React.createClass({
             <Section section={section} key={section.id} idx={idx} len={arr.length} firstHandler={this.firstHandler} first={this.state.first} />
           )
         }, this)}
+        <LightBox />
       </div>
     )
   }
