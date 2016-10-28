@@ -94,6 +94,7 @@ a {
 
 .last {
   min-height: 100vh;
+  position: relative;
 }
 
 .disabled {
@@ -161,14 +162,13 @@ iframe {
 }
 
 .footer {
+  position: absolute;
   width: 100%;
   height: 40px;
-  margin-top: 65vh;
   background-color: none;
   text-align: center;
   font-size: 16px;
-}
-
-.text-muted {
-  margin-top: 10px;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
 }
