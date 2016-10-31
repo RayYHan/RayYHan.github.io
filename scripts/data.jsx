@@ -79,8 +79,8 @@ var education = {
   title: "Education",
   description: 
   <div>
-    <h2>California State University, Los Angeles</h2>
-    <h3>Computer Science - 2016</h3>
+    <h2>Bachelor of Science in Computer Science</h2>
+    <h3>California State University, Los Angeles - 2016</h3>
     <ul>
       <li>Graduation honor: <b>Summa Cum Laude, 2016</b></li>
       <li>Competition winner: <b>Cal State LA Codeathon, 2015</b></li>
